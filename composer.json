@@ -1,0 +1,19 @@
+{
+    "name": "ag/sidebox-fields",
+    "description": "Add Sidebox Fields to Post or Page",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Anton Grakhov",
+            "email": "ant.grakhov@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "AG_Sidebox_Fields\\": "core/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
