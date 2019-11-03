@@ -1,7 +1,7 @@
 var path = require('path')
 
 module.exports = {
-	mode: 'development',
+	mode: 'production',
 	entry: './assets/js/document-setting-panels.js',
 	output: {
 		filename: 'document-setting-panels.build.js',

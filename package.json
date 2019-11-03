@@ -2,7 +2,7 @@
   "name": "ag-sidebox-fields",
   "version": "1.0.0",
   "license": "GPL-2.0-or-later",
-  "main": "block.js",
+  "private": true,
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
