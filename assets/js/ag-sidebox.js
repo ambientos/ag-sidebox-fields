@@ -3,7 +3,6 @@ const { PluginDocumentSettingPanel } = wp.editPost
 const { TextControl, TextareaControl } = wp.components
 const { withSelect, withDispatch } = wp.data
 
-
 /**
  * Title
  */

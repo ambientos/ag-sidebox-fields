@@ -2,10 +2,14 @@
 
 /**
  * Plugin Name: Sidebox Fields
- * Version: 0.1
+ * Description: Add Meta Fields via Gutenberg to Post
+ * Version: 0.2
+ * Requires at least: 5.3
+ * Requires PHP: 5.4
  * Author: Anton Grakhov
  * Author URI: https://grakhov.dev/
- * Tested up to: 5.2
+ * License: GPLv2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: agsf
  * Domain Path: /languages
  */

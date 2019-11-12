@@ -1,6 +1,6 @@
 {
     "name": "ag/sidebox-fields",
-    "description": "Add Sidebox Fields to Post or Page",
+    "description": "Add Sidebox Fields to Post",
     "type": "wordpress-plugin",
     "license": "GPL-2.0",
     "authors": [

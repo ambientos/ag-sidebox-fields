@@ -2,9 +2,9 @@ var path = require('path')
 
 module.exports = {
 	mode: 'production',
-	entry: './assets/js/document-setting-panels.js',
+	entry: './assets/js/ag-sidebox.js',
 	output: {
-		filename: 'document-setting-panels.build.js',
+		filename: 'ag-sidebox.build.js',
 		path: path.resolve(__dirname, 'assets/js')
 	},
 	module: {
