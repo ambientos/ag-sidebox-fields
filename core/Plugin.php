@@ -19,12 +19,6 @@ class Plugin {
 	 * @return
 	 */
 	public function __construct() {
-
-		/**
-		 * Actions
-		 */
-		add_action( 'plugins_loaded', array( __CLASS__, 'plugins_loaded' ) );
-
 		/**
 		 * Register Post Meta
 		 */
@@ -34,19 +28,6 @@ class Plugin {
 		 * Load assets
 		 */
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_assets' ) );
-	}
-
-	/**
-	 * Main load
-	 *
-	 * @return
-	 */
-	public static function plugins_loaded() {
-
-		/**
-		 * Load translations for this plugin
-		 */
-		load_textdomain( TEXT_DOMAIN, PLUGIN_FOLDER . '/languages/' . TEXT_DOMAIN . '-' . get_locale() . '.mo' );
 	}
 
 	/**
@@ -82,7 +63,10 @@ class Plugin {
 		wp_enqueue_script(
 			'ag-sidebox',
 			PLUGIN_URI . '/assets/js/ag-sidebox.build.js',
-			array( 'wp-plugins', 'wp-edit-post', 'wp-element' )
+			array( 'wp-plugins', 'wp-edit-post', 'wp-element', 'wp-i18n', ),
+			'20191112'
 		);
+
+		wp_set_script_translations( 'ag-sidebox', TEXT_DOMAIN, PLUGIN_FOLDER . '/languages' );
 	}
 }

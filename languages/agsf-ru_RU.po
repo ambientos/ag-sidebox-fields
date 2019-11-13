@@ -1,10 +1,9 @@
-# Copyright (C) 2013 the WordPress team
-# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: AG Sidebox Fields Plugin 1.0\n"
-"POT-Creation-Date: 2019-10-17 21:53+0500\n"
-"PO-Revision-Date: 2019-10-17 21:55+0500\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-11-13 17:46+0500\n"
+"PO-Revision-Date: 2019-11-13 17:46+0500\n"
 "Last-Translator: Anton Grakhov <ant.grakhov@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -18,4 +17,25 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_c;__ngettext:1,2;_n:1,2;_x:1,2c;_nx:4c,1,2;"
 "_esc_attr__;esc_html__;esc_html_e;esc_html_x\n"
 "X-Poedit-Basepath: ..\n"
+"X-Domain: agsf\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: assets/js/ag-sidebox.js:137
+msgid "SEO Fields"
+msgstr "SEO-поля"
+
+#: assets/js/ag-sidebox.js:139
+msgid "Title"
+msgstr "Заголовок"
+
+#: assets/js/ag-sidebox.js:142
+msgid "Description"
+msgstr "Описание"
+
+#: assets/js/ag-sidebox.js:148
+msgid "Introduction"
+msgstr "Вступление"
+
+#: assets/js/ag-sidebox.js:155
+msgid "Source"
+msgstr "Источник"

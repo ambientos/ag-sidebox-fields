@@ -1,3 +1,4 @@
+const { __ } = wp.i18n
 const { registerPlugin } = wp.plugins
 const { PluginDocumentSettingPanel } = wp.editPost
 const { TextControl, TextareaControl } = wp.components
@@ -132,31 +133,28 @@ registerPlugin('ag-title-panel', {
         return (
             <div>
                 <PluginDocumentSettingPanel
-                    name='ag-title-panel'
-                    title='Title'
+                    name='ag-title-desc-panel'
+                    title={ __( 'SEO Fields', 'agsf' ) }
                 >
+                    <label>{ __( 'Title', 'agsf' ) }</label>
                     <TitleController/>
-                </PluginDocumentSettingPanel>
-                
-                <PluginDocumentSettingPanel
-                    name='ag-description-panel'
-                    title='Description'
-                >
+
+                    <label>{ __( 'Description', 'agsf' ) }</label>
                     <Description/>
                 </PluginDocumentSettingPanel>
 
                 <PluginDocumentSettingPanel
-                    name='ag-source-panel'
-                    title='Source'
+                    name='ag-intro-panel'
+                    title={ __( 'Introduction', 'agsf' ) }
                 >
-                    <Source/>
+                    <Intro/>
                 </PluginDocumentSettingPanel>
 
                 <PluginDocumentSettingPanel
-                    name='ag-intro-panel'
-                    title='Introduction'
+                    name='ag-source-panel'
+                    title={ __( 'Source', 'agsf' ) }
                 >
-                    <Intro/>
+                    <Source/>
                 </PluginDocumentSettingPanel>
             </div>
         )
