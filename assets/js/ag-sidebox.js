@@ -1,127 +1,50 @@
+import ControlCreate from './modules/control'
+
 const { __ } = wp.i18n
 const { registerPlugin } = wp.plugins
 const { PluginDocumentSettingPanel } = wp.editPost
 const { TextControl, TextareaControl } = wp.components
 const { withSelect, withDispatch } = wp.data
 
+
 /**
  * Title
  */
 
-let TitleController = props => (
-    <TextControl
-        value={props.title_meta}
-        onChange={(value) => props.onMetaFieldChange(value)}
-    />
-)
-
-TitleController = withSelect(
-    (select) => {
-        return {
-            title_meta: select('core/editor').getEditedPostAttribute('meta')['_title_meta']
-        }
-    }
-)(TitleController)
-
-TitleController = withDispatch(
-    (dispatch) => {
-        return {
-            onMetaFieldChange: (value) => {
-                dispatch('core/editor').editPost({ meta: { _title_meta: value } })
-            }
-        }
-    }
-)(TitleController)
+let TitleController = ControlCreate({
+	component: TextControl,
+	name: 'title_meta'
+})
 
 
 /**
  * Description
  */
 
-let Description = props => (
-    <TextareaControl
-        value={props.descr_meta}
-        onChange={(value) => props.onMetaFieldChange(value)}
-    />
-)
+let Description = ControlCreate({
+	component: TextareaControl,
+	name: 'descr_meta'
+})
 
-Description = withSelect(
-    (select) => {
-        return {
-            descr_meta: select('core/editor').getEditedPostAttribute('meta')['_descr_meta']
-        }
-    }
-)(Description)
 
-Description = withDispatch(
-    (dispatch) => {
-        return {
-            onMetaFieldChange: (value) => {
-                dispatch('core/editor').editPost({ meta: { _descr_meta: value } })
-            }
-        }
-    }
-)(Description)
+/**
+ * Intro
+ */
+
+let Intro = ControlCreate({
+	component: TextareaControl,
+	name: 'intro_meta'
+})
 
 
 /**
  * Source
  */
 
-let Source = props => (
-    <TextControl
-        value={props.source_meta}
-        onChange={(value) => props.onMetaFieldChange(value)}
-    />
-)
-
-Source = withSelect(
-    (select) => {
-        return {
-            source_meta: select('core/editor').getEditedPostAttribute('meta')['_source_meta']
-        }
-    }
-)(Source)
-
-Source = withDispatch(
-    (dispatch) => {
-        return {
-            onMetaFieldChange: (value) => {
-                dispatch('core/editor').editPost({ meta: { _source_meta: value } })
-            }
-        }
-    }
-)(Source)
-
-
-/**
- * Source
- */
-
-let Intro = props => (
-    <TextareaControl
-        value={props.intro_meta}
-        onChange={(value) => props.onMetaFieldChange(value)}
-    />
-)
-
-Intro = withSelect(
-    (select) => {
-        return {
-            intro_meta: select('core/editor').getEditedPostAttribute('meta')['_intro_meta']
-        }
-    }
-)(Intro)
-
-Intro = withDispatch(
-    (dispatch) => {
-        return {
-            onMetaFieldChange: (value) => {
-                dispatch('core/editor').editPost({ meta: { _intro_meta: value } })
-            }
-        }
-    }
-)(Intro)
+let Source = ControlCreate({
+	component: TextControl,
+	name: 'source_meta'
+})
 
 
 /**
@@ -129,35 +52,35 @@ Intro = withDispatch(
  */
 
 registerPlugin('ag-title-panel', {
-    render: () => {
-        return (
-            <div>
-                <PluginDocumentSettingPanel
-                    name='ag-title-desc-panel'
-                    title={ __( 'SEO Fields', 'agsf' ) }
-                >
-                    <label>{ __( 'Title', 'agsf' ) }</label>
-                    <TitleController/>
+	render: () => {
+		return (
+			<div>
+				<PluginDocumentSettingPanel
+					name='ag-title-desc-panel'
+					title={ __( 'SEO Fields', 'agsf' ) }
+				>
+					<label>{ __( 'Title', 'agsf' ) }</label>
+					<TitleController/>
 
-                    <label>{ __( 'Description', 'agsf' ) }</label>
-                    <Description/>
-                </PluginDocumentSettingPanel>
+					<label>{ __( 'Description', 'agsf' ) }</label>
+					<Description/>
+				</PluginDocumentSettingPanel>
 
-                <PluginDocumentSettingPanel
-                    name='ag-intro-panel'
-                    title={ __( 'Introduction', 'agsf' ) }
-                >
-                    <Intro/>
-                </PluginDocumentSettingPanel>
+				<PluginDocumentSettingPanel
+					name='ag-intro-panel'
+					title={ __( 'Introduction', 'agsf' ) }
+				>
+					<Intro/>
+				</PluginDocumentSettingPanel>
 
-                <PluginDocumentSettingPanel
-                    name='ag-source-panel'
-                    title={ __( 'Source', 'agsf' ) }
-                >
-                    <Source/>
-                </PluginDocumentSettingPanel>
-            </div>
-        )
-    },
-    icon: '',
+				<PluginDocumentSettingPanel
+					name='ag-source-panel'
+					title={ __( 'Source', 'agsf' ) }
+				>
+					<Source/>
+				</PluginDocumentSettingPanel>
+			</div>
+		)
+	},
+	icon: '',
 })
